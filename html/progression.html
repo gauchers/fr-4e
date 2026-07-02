@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progression Pédagogique - 4ème</title>
+    <style>
+        :root {
+            --primary-light: #BFD7EA;
+            --bg-color: #F4F7FA;
+            --text-dark: #2B3A42;
+            --card-bg: #FFFFFF;
+            --accent-blue: #4A90E2;
+            --shadow: rgba(191, 215, 234, 0.4);
+            --neutral-dark: #475569;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px var(--shadow);
+            border: 1px solid rgba(191, 215, 234, 0.5);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            border-bottom: 4px solid var(--primary-light);
+            padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: var(--neutral-dark);
+            margin: 35px 0 15px 0;
+            padding-left: 5px;
+            border-left: 4px solid var(--accent-blue);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(191, 215, 234, 0.5);
+        }
+        th {
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        tr:hover { background-color: rgba(191, 215, 234, 0.1); }
+        .btn-download {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #FFFFFF;
+            color: var(--text-dark);
+            border: 1px solid var(--accent-blue);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+        }
+        .btn-download:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+        .btn-axe {
+            border-color: #4ae2b6;
+            color: #2b8067;
+        }
+        .btn-axe:hover {
+            background-color: #4ae2b6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Retour vers index.html situé un dossier plus haut -->
+        <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+
+        <h1>📅 Cadre Institutionnel & Progression</h1>
+
+        <!-- SECTION 1 : Cadre national -->
+        <h2>1. Textes Officiels & Cadrage National</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type de Document</th>
+                    <th>Description</th>
+                    <th>Téléchargement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Programme Officiel</strong></td>
+                    <td>Bulletin officiel du cycle 4 (classe de quatrième) complet en Français.</td>
+                    <td><a href="../pdf/prog_officiel_4eme.pdf" class="btn-download" download>📥 Télécharger le BO</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Attendus de fin d'année</strong></td>
+                    <td>Repères annuels de progression et attendus de fin d'année de 4ème.</td>
+                    <td><a href="../pdf/attendus_fin_annee_4eme.pdf" class="btn-download" download>📥 Télécharger les repères</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECTION 2 : Objectifs par axes -->
+        <h2>2. Objectifs Pédagogiques</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Axe d'étude</th>
+                    <th>Fiche d'objectifs</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Axe 1 :</strong> La Fiction (Limites du monde)</td>
+                    <td>Compétences de lecture, d'écriture et repères culturels du récit.</td>
+                    <td><a href="../pdf/objectifs_axe1_fiction.pdf" class="btn-download btn-axe" download>🔑 Objectifs</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Axe 2 :</strong> La Poésie (Habiter la terre)</td>
+                    <td>Objectifs de mémorisation, d'analyse textuelle et de sensibilité littéraire.</td>
+                    <td><a href="../pdf/objectifs_axe2_poesie.pdf" class="btn-download btn-axe" download>🔑 Objectifs</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Axe 3 :</strong> Le Théâtre (Conflits de valeurs)</td>
+                    <td>Enjeux de l'argumentation orale, de la mise en scène et dilemmes moraux.</td>
+                    <td><a href="../pdf/objectifs_axe3_theatre.pdf" class="btn-download btn-axe" download>🔑 Objectifs</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Axe 4 :</strong> Les Lumières (Héritage critique)</td>
+                    <td>Développement du jugement, étude de l'essai et maîtrise du débat d'idées.</td>
+                    <td><a href="../pdf/objectifs_axe4_lumieres.pdf" class="btn-download btn-axe" download>🔑 Objectifs</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
