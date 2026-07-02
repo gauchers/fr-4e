@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices et Corrigés - Fiction 4ème</title>
+    <style>
+        :root {
+            --primary-light: #BFD7EA;
+            --bg-color: #F4F7FA;
+            --text-dark: #2B3A42;
+            --card-bg: #FFFFFF;
+            --accent-blue: #4A90E2;
+            --shadow: rgba(191, 215, 234, 0.4);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px var(--shadow);
+            border: 1px solid rgba(191, 215, 234, 0.5);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--primary-light);
+            padding-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(191, 215, 234, 0.5);
+        }
+        th {
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        tr:hover { background-color: rgba(191, 215, 234, 0.1); }
+        .btn-download {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #FFFFFF;
+            color: var(--text-dark);
+            border: 1px solid var(--accent-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-right: 5px;
+        }
+        .btn-download:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+        .btn-corrige {
+            border-color: #E2844A;
+            color: #E2844A;
+        }
+        .btn-corrige:hover {
+            background-color: #E2844A;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../fiction.html" class="back-link">← Retour à l'axe Fiction</a>
+        <h1>📝 Exercices et Corrigés</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Séance</th>
+                    <th>Document Élève</th>
+                    <th>Corrigé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Séance 1 :</strong> Le pacte fantastique</td>
+                    <td><a href="../../pdf/ex_a_001_seq_001_sea_001.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
+                    <td><a href="../../pdf/cor_a_001_seq_001_sea_001.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Séance 2 :</strong> Repérer les indices du paranormal</td>
+                    <td><a href="../../pdf/ex_a_001_seq_001_sea_002.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
+                    <td><a href="../../pdf/cor_a_001_seq_001_sea_002.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
