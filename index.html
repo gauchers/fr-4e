@@ -12,7 +12,12 @@
             --text-dark: #2B3A42;     /* Bleu-gris sombre pour la lecture */
             --card-bg: #FFFFFF;       /* Blanc pour les blocs */
             --accent-blue: #4A90E2;   /* Bleu plus vif pour les interactions */
-            --shadow: rgba(191, 215, 234, 0.4); 
+            --shadow: rgba(191, 215, 234, 0.4);
+
+            /* Variante pour le public externe / professeurs / parents */
+            --neutral-bg: #eaeff4;
+            --neutral-border: #cbd5e1;
+            --neutral-text: #475569;
         }
 
         * {
@@ -47,7 +52,7 @@
             font-style: italic;
         }
 
-        /* Grille des 4 grands thèmes */
+        /* Grille des thèmes + progression */
         .program-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -86,6 +91,28 @@
             color: #4A5568;
             margin-bottom: 25px;
             flex-grow: 1; /* Aligne les boutons en bas si les textes font des tailles différentes */
+        }
+
+        /* Style spécifique pour la carte d'administration / progression */
+        .program-card.admin-card {
+            background: var(--neutral-bg);
+            border-color: var(--neutral-border);
+            box-shadow: 0 4px 10px rgba(71, 85, 105, 0.08);
+        }
+        .program-card.admin-card h2 {
+            border-bottom-color: var(--neutral-border);
+            color: #334155;
+        }
+        .program-card.admin-card p {
+            color: var(--neutral-text);
+        }
+        .program-card.admin-card .btn-navigation {
+            background-color: #cbd5e1;
+            color: #334155;
+        }
+        .program-card.admin-card .btn-navigation:hover {
+            background-color: #64748b;
+            color: #ffffff;
         }
 
         /* Style des boutons de navigation */
@@ -133,7 +160,6 @@
 
     <main class="program-grid">
 
-        <!-- Module 1: Fiction -->
         <section class="program-card">
             <div>
                 <h2>Sonder, explorer, anticiper : la fiction aux limites de notre monde</h2>
@@ -142,7 +168,6 @@
             <a href="html/fiction.html" class="btn-navigation">Accéder au chapitre</a>
         </section>
 
-        <!-- Module 2: Poésie -->
         <section class="program-card">
             <div>
                 <h2>Contempler, célébrer, veiller : habiter la terre en poète</h2>
@@ -151,7 +176,6 @@
             <a href="html/poesie.html" class="btn-navigation">Accéder au chapitre</a>
         </section>
 
-        <!-- Module 3: Théâtre -->
         <section class="program-card">
             <div>
                 <h2>Obéir, désobéir, trahir ? Conflits de valeurs sur scène</h2>
@@ -160,13 +184,20 @@
             <a href="html/theatre.html" class="btn-navigation">Accéder au chapitre</a>
         </section>
 
-        <!-- Module 4: Les Lumières -->
         <section class="program-card">
             <div>
                 <h2>Critiquer, dénoncer, penser : les Lumières en héritage</h2>
                 <p>Explore l'actualité des combats humanistes pour la justice, l'égalité et le savoir. Apprends à douter, oser dénoncer, et forger une pensée libre de préjugés pour porter à ton tour cet héritage fragile.</p>
             </div>
             <a href="html/lumieres.html" class="btn-navigation">Accéder au chapitre</a>
+        </section>
+
+        <section class="program-card admin-card">
+            <div>
+                <h2>Planifier, cheminer, réussir</h2>
+                <p>Programme et attendus ; objectifs et progression pédagogiques.</p>
+            </div>
+            <a href="html/progression.html" class="btn-navigation">Consulter la progression</a>
         </section>
 
     </main>
