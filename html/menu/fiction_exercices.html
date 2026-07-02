@@ -60,6 +60,18 @@
             color: var(--text-dark);
             font-weight: 600;
         }
+        
+        /* Style pour la ligne d'intitulé de la Séquence */
+        .sequence-header {
+            background-color: #EAF2F8;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+        .sequence-header:hover { background-color: #EAF2F8 !important; }
+
         tr:hover { background-color: rgba(191, 215, 234, 0.1); }
         .btn-download {
             display: inline-block;
@@ -95,37 +107,57 @@
         <table>
             <thead>
                 <tr>
-                    <th>Séance</th>
+                    <th>Séance / Chapitre</th>
                     <th>Document Élève</th>
                     <th>Corrigé</th>
                 </tr>
             </thead>
             <tbody>
+                
+                <!-- En-tête visuel de la Séquence 1 -->
                 <tr>
-                    <td><strong>Séance 1 :</strong> Le fantastique. Aux frontières du réel</td>
+                    <td colspan="3" class="sequence-header">📁 Séquence 1 : Le Fantastique</td>
+                </tr>
+
+                <!-- Séances rattachées -->
+                <tr>
+                    <td><strong>Séance 1 :</strong> Aux frontières du réel</td>
                     <td><a href="../../pdf/ex_a_001_seq_001_sea_001.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
                     <td><a href="../../pdf/cor_a_001_seq_001_sea_001.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
                 </tr>
                 <tr>
-                    <td><strong>Séance 2 :</strong> Le fantastique. Installer l'étrange</td>
+                    <td><strong>Séance 2 :</strong> Installer l'étrange</td>
                     <td><a href="../../pdf/ex_a_001_seq_001_sea_002.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
                     <td><a href="../../pdf/cor_a_001_seq_001_sea_002.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
                 </tr>
                 <tr>
-                    <td><strong>Séance 3 :</strong> Le fantastique. Alimenter le malaise</td>
+                    <td><strong>Séance 3 :</strong> Alimenter le malaise</td>
                     <td><a href="../../pdf/ex_a_001_seq_001_sea_003.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
                     <td><a href="../../pdf/cor_a_001_seq_001_sea_003.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
                 </tr>
                 <tr>
-                    <td><strong>Séance 4 :</strong> Le fantastique. Préparer l'irruption du surnaturel</td>
+                    <td><strong>Séance 4 :</strong> Préparer l'irruption du surnaturel</td>
                     <td><a href="../../pdf/ex_a_001_seq_001_sea_004.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
                     <td><a href="../../pdf/cor_a_001_seq_001_sea_004.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
                 </tr>
                 <tr>
-                    <td><strong>Séance 5 :</strong> Le fantastique. Programmer l'étrange</td>
+                    <td><strong>Séance 5 :</strong> Programmer l'étrange</td>
                     <td><a href="../../pdf/ex_a_001_seq_001_sea_005.pdf" class="btn-download" download>📥 Fiche d'exercices</a></td>
                     <td><a href="../../pdf/cor_a_001_seq_001_sea_005.pdf" class="btn-download btn-corrige" download>🔑 Télécharger le corrigé</a></td>
                 </tr>
+
+                <!-- Exemple pour plus tard : tu n'auras qu'à dupliquer ce bloc pour la Séquence 2 -->
+                <!-- 
+                <tr>
+                    <td colspan="3" class="sequence-header">📁 Séquence 2 : Le Récit d'Anticipation</td>
+                </tr>
+                <tr>
+                    <td><strong>Séance 1 :</strong> Demain, le monde...</td>
+                    <td><a href="#" class="btn-download">📥 Fiche d'exercices</a></td>
+                    <td><a href="#" class="btn-download btn-corrige">🔑 Télécharger le corrigé</a></td>
+                </tr> 
+                -->
+
             </tbody>
         </table>
     </div>
