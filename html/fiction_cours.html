@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supports de Cours — Fiction 4ème</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Ton code couleur bleu habituel */
+    --blue: #3b82f6;
+    --blue-dark: #1e3a8a;
+    --cream: #ffffff;
+    --parch: #f8fafc;
+    --parch-dark: #cbd5e1;
+    --umber: #1e293b;
+    --umber-light: #334155;
+    --ink: #334155;
+    --ink-soft: #64748b;
+    --radius: 16px;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    position: relative;
+    overflow-x: hidden;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
+  button { font-family: var(--sans); }
+
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* ---- En-tête conforme à l'image_6e377f.png ---- */
+  .header-clean {
+    padding: 2.5rem 0 1.5rem;
+    border-bottom: 3px solid #bad6f7;
+    margin-bottom: 2rem;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .title-icon {
+    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  h1.main-title {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: var(--umber);
+    margin: 0;
+  }
+
+  /* ---- Grands Titres de Séquences ---- */
+  .sequence-container {
+    margin-bottom: 2.5rem;
+  }
+  .sequence-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--parch-dark);
+  }
+
+  /* ---- Séance Chips ---- */
+  .seance-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1rem; }
+  .seance-chip {
+    display: flex; align-items: center; gap: 0.55rem;
+    background: var(--parch); border: 2px solid transparent; border-radius: 12px;
+    padding: 0.7rem 1rem; cursor: pointer; text-align: left; min-width: 210px; flex: 1 1 210px;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .seance-chip:hover { transform: translateY(-2px); }
+  .seance-chip.active { border-color: var(--blue); background: var(--cream); box-shadow: 0 8px 20px rgba(59,130,246,0.1); }
+  @media (prefers-reduced-motion: reduce) { .seance-chip { transition: none; } .seance-chip:hover { transform: none; } }
+
+  /* Les numéros passent du doré à ton bleu */
+  .chip-num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--blue);
+    width: 2rem;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  /* Accentuation du bleu sur le numéro quand le jeton est actif */
+  .seance-chip.active .chip-num { color: var(--blue-dark); }
+  .chip-text { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+
+  /* ---- Viewer Panel ---- */
+  .viewer-panel {
+    background: var(--parch); border-radius: var(--radius); padding: 1.4rem;
+    box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+    margin-top: 2.5rem;
+  }
+  .viewer-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .viewer-title { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; color: var(--blue-dark); margin: 0; }
+  .viewer-sub { font-size: 0.85rem; color: var(--ink-soft); margin: 0.2rem 0 0; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem; background: var(--blue); color: #ffffff;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.1rem; border-radius: 10px;
+    flex-shrink: 0; white-space: nowrap; transition: background-color 0.15s ease;
+  }
+  .dl-btn svg { width: 15px; height: 15px; stroke: #ffffff; fill: none; }
+  .dl-btn:hover { background: var(--blue-dark); }
+
+  .frame-wrap {
+    background: #ffffff; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--parch-dark); position: relative;
+  }
+  .frame-wrap iframe { width: 100%; height: 68vh; min-height: 420px; border: 0; display: block; background: #ffffff; }
+  .fallback-note { font-size: 0.8rem; color: var(--ink-soft); margin: 0.7rem 0.2rem 0; }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- En-tête conforme à l'image_6e377f.png -->
+    <header class="header-clean">
+      <a href="../fiction.html" class="back-link">← Retour à l'axe Fiction</a>
+      <div class="title-wrap">
+        <span class="title-icon">📖</span>
+        <h1 class="main-title">Supports de Cours — Fiction 4ème</h1>
+      </div>
+    </header>
+
+    <!-- Zone d'accueil dynamique des Séquences et Séances -->
+    <div id="courses-wrapper"></div>
+
+    <!-- Panneau de visionnage du PDF -->
+    <section class="viewer-panel">
+      <div class="viewer-head">
+        <div>
+          <h2 class="viewer-title" id="viewer-title">—</h2>
+          <p class="viewer-sub" id="viewer-sub">—</p>
+        </div>
+        <a class="dl-btn" id="dl-link" href="#" download>
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 12l5 5 5-5M4 19.5c0 .8.7 1.5 1.5 1.5h13c.8 0 1.5-.7 1.5-1.5"/></svg>
+          Télécharger
+        </a>
+      </div>
+      <div class="frame-wrap">
+        <iframe id="pdf-frame" title="Cours en PDF"></iframe>
+      </div>
+      <p class="fallback-note">Le document ne s'affiche pas ? Clique sur « Télécharger » ci-dessus pour l'ouvrir directement.</p>
+    </section>
+  </div>
+
+<script>
+  // Base de données structurée par Séquences
+  const donneesCours = [
+    {
+      sequence: "Séquence 1 : Le Fantastique",
+      seances: [
+        { num: "1",  title: "Aux frontières du réel",      sub: "Le fantastique, le merveilleux", file: "../pdf/FR_4E_S1_001.pdf" },
+        { num: "2",  title: "Installer l'étrange",         sub: "Incipit et procédés d'écriture",     file: "../pdf/FR_4E_S1_002.pdf" },
+        { num: "3",  title: "Alimenter le malaise",         sub: "Non-dits et angoisses",       file: "../pdf/FR_4E_S1_003.pdf" },
+        { num: "4",  title: "Préparer l'irruption du surnaturel",   sub: "La tension narrative",     file: "../pdf/FR_4E_S1_004.pdf" },
+        { num: "5",  title: "Programmer l'étrange",   sub: "Bâtir le récit",     file: "../pdf/FR_4E_S1_005.pdf" }
+      ]
+    }
+    // Tu pourras facilement ajouter une Séquence 2 ici sur le même modèle
+  ];
+
+  const wrapper = document.getElementById("courses-wrapper");
+  const frame = document.getElementById("pdf-frame");
+  const dlLink = document.getElementById("dl-link");
+  const vTitle = document.getElementById("viewer-title");
+  const vSub = document.getElementById("viewer-sub");
+
+  // Fonction globale de sélection (cherche l'identifiant unique global "seqIndex-seanceIndex")
+  function selectSeance(seqIdx, seanceIdx, totalUniqueId) {
+    const s = donneesCours[seqIdx].seances[seanceIdx];
+
+    // Gère la classe active sur TOUS les jetons de la page
+    const allChips = document.querySelectorAll(".seance-chip");
+    allChips.forEach(chip => {
+      chip.classList.toggle("active", chip.getAttribute("data-id") === totalUniqueId);
+    });
+
+    // Remplissage de la visionneuse
+    vTitle.textContent = `Séance ${s.num} : ${s.title}`;
+    vSub.textContent = s.sub;
+
+    // Injection du fichier
+    frame.src = s.file + "#toolbar=1&view=FitH";
+    dlLink.href = s.file;
+    dlLink.setAttribute("download", s.file.split('/').pop());
+  }
+
+  // Génération dynamique HTML des blocs Séquences + Boutons Séances
+  donneesCours.forEach((blocSeq, seqIdx) => {
+    // 1. Conteneur global de la séquence
+    const seqContainer = document.createElement("div");
+    seqContainer.className = "sequence-container";
+
+    // 2. Titre H2 de la séquence
+    const h2 = document.createElement("h2");
+    h2.className = "sequence-title";
+    h2.textContent = blocSeq.sequence;
+    seqContainer.appendChild(h2);
+
+    // 3. Grille (Flexbox) pour accueillir ses séances
+    const listDiv = document.createElement("div");
+    listDiv.className = "seance-list";
+
+    // 4. Boucle sur les séances du bloc
+    blocSeq.seances.forEach((s, seanceIdx) => {
+      const uId = `${seqIdx}-${seanceIdx}`; // Création d'un id unique de bouton
+
+      const chip = document.createElement("button");
+      chip.className = "seance-chip";
+      chip.setAttribute("data-id", uId);
+      chip.setAttribute("aria-label", `Séance ${s.num} : ${s.title}`);
+      chip.innerHTML = `<span class="chip-num">${s.num}</span><span class="chip-text">${s.title}</span>`;
+
+      chip.addEventListener("click", () => selectSeance(seqIdx, seanceIdx, uId));
+      listDiv.appendChild(chip);
+    });
+
+    seqContainer.appendChild(listDiv);
+    wrapper.appendChild(seqContainer);
+  });
+
+  // Chargement automatique du tout premier élément au démarrage
+  document.addEventListener("DOMContentLoaded", () => {
+    if(donneesCours.length > 0 && donneesCours[0].seances.length > 0) {
+      selectSeance(0, 0, "0-0");
+    }
+  });
+</script>
+
+</body>
+</html>
