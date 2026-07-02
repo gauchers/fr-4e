@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de Français - 4ème</title>
+    <style>
+        /* Palette de couleurs basée sur #BFD7EA */
+        :root {
+            --primary-light: #BFD7EA; /* Ton bleu de base */
+            --bg-color: #F4F7FA;      /* Fond très clair et doux */
+            --text-dark: #2B3A42;     /* Bleu-gris sombre pour la lecture */
+            --card-bg: #FFFFFF;       /* Blanc pour les blocs */
+            --accent-blue: #4A90E2;   /* Bleu plus vif pour les interactions */
+            --shadow: rgba(191, 215, 234, 0.4); 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #5A6B75;
+            font-style: italic;
+        }
+
+        /* Grille des 4 grands thèmes */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .program-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 16px var(--shadow);
+            border: 1px solid rgba(191, 215, 234, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(191, 215, 234, 0.7);
+        }
+
+        .program-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary-light);
+            padding-bottom: 10px;
+        }
+
+        .program-card p {
+            font-size: 0.95rem;
+            color: #4A5568;
+            margin-bottom: 25px;
+            flex-grow: 1; /* Aligne les boutons en bas si les textes font des tailles différentes */
+        }
+
+        /* Style des boutons de navigation */
+        .btn-navigation {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-navigation:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #A0AEC0;
+        }
+
+        /* Adaptation pour les téléphones */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Français 4<sup>ème</sup></h1>
+        <p>Perspective annuelle : Rêver, délibérer, développer son jugement – en quête de valeurs et de vérité</p>
+    </header>
+
+    <main class="program-grid">
+
+        <!-- Module 1: Fiction -->
+        <section class="program-card">
+            <div>
+                <h2>Sonder, explorer, anticiper : la fiction aux limites de notre monde</h2>
+                <p>Où s’arrête le réel ? Où commencent l’imaginaire et le rêve ? Récits fantastiques, d’anticipation ou enquêtes policières brouillent les frontières pour explorer le réel et aiguiser ton esprit critique face aux mutations du monde.</p>
+            </div>
+            <a href="fiction.html" class="btn-navigation">Accéder au chapitre</a>
+        </section>
+
+        <!-- Module 2: Poésie -->
+        <section class="program-card">
+            <div>
+                <h2>Contempler, célébrer, veiller : habiter la terre en poète</h2>
+                <p>Découvre comment les poètes, de l'Antiquité à nos jours, observent, célèbrent et questionnent le monde. Un voyage textuel pour s'émerveiller des émotions humaines et prendre conscience de la fragilité de notre environnement.</p>
+            </div>
+            <a href="poesie.html" class="btn-navigation">Accéder au chapitre</a>
+        </section>
+
+        <!-- Module 3: Théâtre -->
+        <section class="program-card">
+            <div>
+                <h2>Obéir, désobéir, trahir ? Conflits de valeurs sur scène</h2>
+                <p>La scène de théâtre est un espace de dilemmes et de délibération. Viens analyser les rapports de force, les choix héroïques ou politiques, et comprendre comment le jeu théâtral nous pousse à construire nos propres valeurs.</p>
+            </div>
+            <a href="theatre.html" class="btn-navigation">Accéder au chapitre</a>
+        </section>
+
+        <!-- Module 4: Les Lumières -->
+        <section class="program-card">
+            <div>
+                <h2>Critiquer, dénoncer, penser : les Lumières en héritage</h2>
+                <p>Explore l'actualité des combats humanistes pour la justice, l'égalité et le savoir. Apprends à douter, oser dénoncer, et forger une pensée libre de préjugés pour porter à ton tour cet héritage fragile.</p>
+            </div>
+            <a href="lumieres.html" class="btn-navigation">Accéder au chapitre</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Espace Numérique de Français - Classe de 4ème</p>
+    </footer>
+
+</body>
+</html>
